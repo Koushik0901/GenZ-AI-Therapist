@@ -10,7 +10,7 @@ from agent import run_crew_response, get_session_title
 
 # --- Setup ---
 os.environ['SERPER_API_KEY'] = st.secrets["SERPER_API_KEY"]
-os.environ['GROQ_API_KEY'] = st.secrets["GROQ_API_KEY"]
+os.environ['OPENAI_API_KEY'] = st.secrets["OPENAI_API_KEY"]
 
 CHAT_DIR = "chat_sessions"
 os.makedirs(CHAT_DIR, exist_ok=True)

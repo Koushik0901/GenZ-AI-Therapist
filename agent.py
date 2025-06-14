@@ -7,10 +7,6 @@ from pydantic import BaseModel, Field
 
 import argparse
 
-from dotenv import load_dotenv
-# Load environment variables from .env file
-load_dotenv("secrets.env")
-
 
 search_tool = SerperDevTool(
     name="Search Tool",
