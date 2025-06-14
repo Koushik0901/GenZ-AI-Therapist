@@ -1,0 +1,22 @@
+*.toml
+*.json
+*.env
+.streamlit
+.conda
+__pycache__/
+*.pyc
+chroma_db/
+test.ipynb
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+# Ignore Python virtual environments
+venv/
+# Ignore Python bytecode files
+*.py[cod]
+# Ignore log files
+*.log
+# Ignore coverage reports
+.coverage
+# Ignore cache directories
+.cache/
+
