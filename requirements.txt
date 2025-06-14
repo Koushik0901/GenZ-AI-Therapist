@@ -1,0 +1,6 @@
+streamlit
+crewai
+langchain-openai
+langchain-community
+plotly
+pydantic>=2.0
