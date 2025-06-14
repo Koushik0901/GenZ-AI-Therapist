@@ -1,5 +1,8 @@
-import json
-import os
+import sys
+
+# Temporarily patch chromadb imports to avoid the sqlite3 check
+sys.modules["chromadb"] = None
+
 from typing import Dict, Union, List
 from crewai import Agent, Task, Crew, Process, LLM
 from crewai_tools import SerperDevTool
@@ -21,20 +24,6 @@ llm = LLM(
     stop=["END"],
     seed=42
 )
-# llm = LLM(
-# 	# provider="ollama",
-# 	model="ollama/qwen3:latest",
-# 	base_url="http://localhost:11434",
-# 	stream=False,
-# 	verbose=True,
-# )
-
-# deploying LLM (Groq)
-# llm = LLM(
-#     "groq/gemma2-9b-it",
-#     stream=False,
-#     verbose=True,
-# )
 
 
 # ------------------- Output Schemas -------------------
@@ -260,7 +249,6 @@ guard_crew = Crew(
     tasks=[guard_task],
     verbose=True,
     max_rpm=2,  # Limit to 2 requests per minute for safety
-    cache=True,
     process=Process.sequential,  # Ensure tasks are processed in order
 )
 
@@ -269,7 +257,6 @@ title_crew = Crew(
     tasks=[chat_title_generator_task],
     verbose=True,
     max_rpm=2,
-    cache=True,
     process=Process.sequential,  # Ensure tasks are processed in order
 )
 
@@ -282,7 +269,6 @@ main_crew = Crew(
     tasks=[classification_task, resource_finder_task, genz_therapist_task],
     verbose=True,
     max_rpm=16,
-    cache=True,
     process=Process.sequential,  # Ensure tasks are processed in order
 )
 
