@@ -1,5 +1,4 @@
 *.toml
-*.json
 *.env
 .streamlit
 .conda
@@ -8,6 +7,10 @@ __pycache__/
 *.pyc
 chroma_db/
 test.ipynb
+chat_sessions/*.json
+web/.next/
+web/dev-server.log
+web/.env.local
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints
 # Ignore Python virtual environments
