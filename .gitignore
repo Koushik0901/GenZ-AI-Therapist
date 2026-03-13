@@ -11,6 +11,7 @@ test.ipynb
 .ipynb_checkpoints
 # Ignore Python virtual environments
 venv/
+.venv/
 # Ignore Python bytecode files
 *.py[cod]
 # Ignore log files
