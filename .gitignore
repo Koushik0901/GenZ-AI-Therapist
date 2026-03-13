@@ -3,6 +3,7 @@
 *.env
 .streamlit
 .conda
+node_modules/
 __pycache__/
 *.pyc
 chroma_db/
