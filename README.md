@@ -331,10 +331,30 @@ This is the **current** product stack.
   - `OPENROUTER_MODEL`
 - **LangGraph (JavaScript)**
   - clean agentic workflow orchestration
+  - this is the actual framework powering the live multi-step agent flow now
+  - replaces the old CrewAI runtime for the web product
 - **Serper**
   - optional live search for resource discovery
 - **Zod**
   - schema validation + structured output hardening
+
+### 🕸️ Agent Workflow Files
+
+If you want to see where the agent system actually lives now, check:
+
+- [`web/src/lib/companion-graph.ts`](./web/src/lib/companion-graph.ts)
+  - graph definition and execution
+- [`web/src/lib/companion-nodes.ts`](./web/src/lib/companion-nodes.ts)
+  - the individual node behaviors
+- [`web/src/lib/companion-foundation.ts`](./web/src/lib/companion-foundation.ts)
+  - prompts, schemas, helper logic, fallbacks, and model plumbing
+
+So the mental model is:
+
+- **LangGraph JS** = workflow engine
+- **OpenRouter** = model access
+- **Next.js route handlers** = app/runtime integration
+- **Serper** = live resource search when needed
 
 ### 🧪 Legacy / Historical Repo Context
 
