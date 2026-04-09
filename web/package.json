@@ -6,7 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest",
+    "test:unit": "vitest run --include='tests/unit/**/*.test.ts'",
+    "test:integration": "vitest run --include='tests/integration/**/*.test.ts'",
+    "test:e2e": "vitest run --include='tests/e2e/**/*.test.ts'",
+    "test:crisis": "vitest run --include='tests/integration/crisis-scenarios.test.ts'",
+    "test:injection": "vitest run --include='tests/integration/injection-attempts.test.ts'",
+    "test:perf": "vitest run --include='tests/performance/**/*.test.ts'",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch"
   },
   "dependencies": {
     "@assistant-ui/react": "^0.12.17",
@@ -19,6 +28,8 @@
     "lucide-react": "^0.577.0",
     "next": "16.1.6",
     "nextjs-toploader": "^3.9.17",
+    "pino": "^9.2.0",
+    "pino-pretty": "^11.2.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "recharts": "^3.8.0",
@@ -32,9 +43,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^2.1.8",
+    "@vitest/ui": "^2.1.8",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^2.1.8"
   }
 }

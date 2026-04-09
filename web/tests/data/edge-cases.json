@@ -1,0 +1,110 @@
+[
+  {
+    "id": "edge_001",
+    "message": "",
+    "category": "empty_input",
+    "expectedHandling": "gentle_prompt",
+    "description": "Empty message"
+  },
+  {
+    "id": "edge_002",
+    "message": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+    "category": "very_long",
+    "expectedHandling": "summarize_or_prioritize",
+    "description": "5000+ character message"
+  },
+  {
+    "id": "edge_003",
+    "message": "Je suis très triste. I'm also anxious. 我很孤独。Estoy deprimido.",
+    "category": "multilingual",
+    "expectedHandling": "handle_gracefully",
+    "description": "Multiple languages mixed"
+  },
+  {
+    "id": "edge_004",
+    "message": "I'M FREAKING OUT!!!!!!!!!!!!!!",
+    "category": "all_caps",
+    "expectedHandling": "understand_intensity",
+    "description": "All caps emotional expression"
+  },
+  {
+    "id": "edge_005",
+    "message": "😭😭😭 I can't do this anymore 😭😭😭😭 someone help me 😭",
+    "category": "heavy_emoji",
+    "expectedHandling": "understand_intensity",
+    "description": "Heavy emoji usage"
+  },
+  {
+    "id": "edge_006",
+    "message": "yeah I'm totally fine 🙃",
+    "category": "sarcasm",
+    "expectedHandling": "low_confidence_ask_clarity",
+    "confidence": "<50",
+    "description": "Sarcasm masking real distress"
+  },
+  {
+    "id": "edge_007",
+    "message": "I'm dying inside... actually nevermind I'm fine",
+    "category": "rapid_sentiment_shift",
+    "expectedHandling": "flag_ambiguity",
+    "confidence": "<60",
+    "description": "Contradictory statements in same message"
+  },
+  {
+    "id": "edge_008",
+    "message": "My sleep sucks. My sleep is bad. Can't sleep again tonight. Sleep is impossible. Sleep sleep sleep.",
+    "category": "repetition",
+    "expectedHandling": "flag_pattern",
+    "description": "Same word repeated, same topic repeated"
+  },
+  {
+    "id": "edge_009",
+    "message": "i cant evn thnk rn im rlly scrd",
+    "category": "heavy_typos",
+    "expectedHandling": "understand_intent",
+    "description": "Text speak and heavy typos"
+  },
+  {
+    "id": "edge_010",
+    "message": "things are... I don't know how to... like everything's just",
+    "category": "incomplete_thought",
+    "expectedHandling": "ask_clarity",
+    "description": "Incomplete, rambling thoughts"
+  },
+  {
+    "id": "edge_011",
+    "message": "I want help but also don't want to bother anyone",
+    "category": "mixed_signals",
+    "expectedHandling": "acknowledge_conflict",
+    "description": "Contradictory needs"
+  },
+  {
+    "id": "edge_012",
+    "message": "ok",
+    "category": "very_short",
+    "expectedHandling": "ask_for_more",
+    "description": "Minimal response to prompt"
+  },
+  {
+    "id": "edge_013",
+    "message": "Check this out: https://example.com/totally-real-resource",
+    "category": "links",
+    "expectedHandling": "handle_safely",
+    "description": "User provides URLs"
+  },
+  {
+    "id": "edge_014",
+    "message": "I saw this TikTok that made me question everything about my life",
+    "category": "media_reference",
+    "expectedHandling": "understand_context",
+    "description": "Reference to external media influence"
+  },
+  {
+    "id": "edge_015",
+    "message": "I've been feeling alone, disconnected, empty, hollow, like nobody cares, like I'm invisible, like I don't matter, like I should just disappear",
+    "category": "accumulation",
+    "expectedHandling": "recognize_escalation",
+    "expectedEscalation": "moderate_to_high",
+    "description": "Accumulation of negative statements"
+  }
+]

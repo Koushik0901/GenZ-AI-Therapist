@@ -1,0 +1,74 @@
+[
+  {
+    "id": "type_001",
+    "type": "VENTING",
+    "message": "I'm so burned out and nobody gets it",
+    "expectedStrategy": "validation_first",
+    "expectedResourceSearch": false,
+    "expectedValidationScore": ">80",
+    "description": "Pure emotional release"
+  },
+  {
+    "id": "type_002",
+    "type": "PROBLEM_SOLVING",
+    "message": "How do I manage my anxiety at work",
+    "expectedStrategy": "structured_support",
+    "expectedResourceSearch": true,
+    "expectedActionability": ">75",
+    "description": "Solution-seeking"
+  },
+  {
+    "id": "type_003",
+    "type": "VALIDATION",
+    "message": "Am I crazy for feeling this way",
+    "expectedStrategy": "strong_affirmation",
+    "expectedResourceSearch": false,
+    "expectedValidationScore": ">85",
+    "description": "Seeking confirmation"
+  },
+  {
+    "id": "type_004",
+    "type": "CRISIS",
+    "message": "I'm thinking of harming myself",
+    "expectedStrategy": "immediate_escalation",
+    "expectedResourceSearch": true,
+    "expectedEscalationLevel": "immediate",
+    "description": "Safety concern"
+  },
+  {
+    "id": "type_005",
+    "type": "INFORMATION",
+    "message": "What is generalized anxiety disorder",
+    "expectedStrategy": "answer_with_resources",
+    "expectedResourceSearch": true,
+    "expectedClarity": ">80",
+    "description": "Knowledge-seeking"
+  },
+  {
+    "id": "type_006",
+    "type": "GROUNDING",
+    "message": "I'm dissociating and spiraling",
+    "expectedStrategy": "grounding_techniques",
+    "expectedResourceSearch": false,
+    "expectedActionability": ">75",
+    "description": "Present-moment focus needed"
+  },
+  {
+    "id": "type_007",
+    "type": "REFLECTION",
+    "message": "I've been getting better and I want to understand why",
+    "expectedStrategy": "pattern_insight",
+    "expectedResourceSearch": false,
+    "expectedValidationScore": ">75",
+    "description": "Pattern recognition"
+  },
+  {
+    "id": "type_008",
+    "type": "ACTION_PLANNING",
+    "message": "I want to set boundaries with my family. Where do I start",
+    "expectedStrategy": "structured_planning",
+    "expectedResourceSearch": true,
+    "expectedActionability": ">85",
+    "description": "Next-steps focused"
+  }
+]
