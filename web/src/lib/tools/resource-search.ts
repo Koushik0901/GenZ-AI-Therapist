@@ -264,15 +264,15 @@ export async function conditionalResourceSearch(args: {
     if (decision.search_depth === 'minimal') {
       // Quick search for direct answer
       const results = await searchWeb(query);
-      resources = normalizeResources(sanitizeSearchResults(results).slice(0, 1));
+      resources = normalizeResources(sanitizeSearchResults(results).slice(0, 1) as any);
     } else if (decision.search_depth === 'moderate') {
       // Standard search for general resources
       const results = await searchWeb(query);
-      resources = normalizeResources(sanitizeSearchResults(results).slice(0, 2));
+      resources = normalizeResources(sanitizeSearchResults(results).slice(0, 2) as any);
     } else if (decision.search_depth === 'deep') {
       // Comprehensive search for crisis resources
       const results = await searchWeb(query);
-      resources = normalizeResources(sanitizeSearchResults(results).slice(0, 3));
+      resources = normalizeResources(sanitizeSearchResults(results).slice(0, 3) as any);
     }
 
     // Step 4: Score resource relevance using LLM

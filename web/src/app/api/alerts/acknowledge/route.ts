@@ -46,13 +46,15 @@ export async function POST(request: NextRequest) {
       const rawBody = await request.json();
       body = AcknowledgeAlertSchema.parse(rawBody);
     } catch (error) {
+      const message =
+        error instanceof z.ZodError
+          ? `Validation error: ${error.issues[0]?.message || 'Invalid input'}`
+          : 'Invalid request body';
+
       return NextResponse.json(
         {
           success: false,
-          message:
-            error instanceof z.ZodError
-              ? `Validation error: ${error.errors[0].message}`
-              : 'Invalid request body',
+          message,
         },
         { status: 400 }
       );

@@ -144,50 +144,55 @@ function fallbackWellness(message: string, classification: Classification): Well
   const lower = message.toLowerCase();
 
   // Base scores by sentiment
-  const presetBySentiment = {
+  const baseScores: Record<string, { mood: number; energy: number; stress: number }> = {
     Crisis: { mood: 12, energy: 20, stress: 92 },
     Negative: { mood: 32, energy: 38, stress: 76 },
     Neutral: { mood: 55, energy: 52, stress: 48 },
     Positive: { mood: 76, energy: 68, stress: 30 },
-  } as const;
+  };
 
-  let scores = { ...presetBySentiment[classification.sentiment] };
+  const preset = baseScores[classification.sentiment] || baseScores['Neutral'];
+  let mood = preset.mood;
+  let energy = preset.energy;
+  let stress = preset.stress;
 
   // Adjust for energy-related keywords
   if (/\b(exhausted|drained|fried|burned out|burnt out|tired|sleeping|bed)\b/i.test(lower)) {
-    scores.energy = Math.max(0, scores.energy - 18);
-    scores.stress = Math.min(100, scores.stress + 6);
+    energy = Math.max(0, energy - 18);
+    stress = Math.min(100, stress + 6);
   }
 
   // Adjust for panic/anxiety
   if (/\b(panic|spiral|overwhelmed|anxious|stressed|shaking|heart racing)\b/i.test(lower)) {
-    scores.mood = Math.max(0, scores.mood - 12);
-    scores.stress = Math.min(100, scores.stress + 14);
+    mood = Math.max(0, mood - 12);
+    stress = Math.min(100, stress + 14);
   }
 
   // Adjust for positive markers
   if (/\b(proud|better|relieved|grateful|calm|okay today|doing better)\b/i.test(lower)) {
-    scores.mood = Math.min(100, scores.mood + 12);
-    scores.energy = Math.min(100, scores.energy + 8);
-    scores.stress = Math.max(0, scores.stress - 12);
+    mood = Math.min(100, mood + 12);
+    energy = Math.min(100, energy + 8);
+    stress = Math.max(0, stress - 12);
   }
 
   // Adjust for motivation/planning
   if (/\b(plan|goal|start|try|help me|make a change|moving forward)\b/i.test(lower)) {
-    scores.energy = Math.min(100, scores.energy + 6);
-    scores.mood = Math.min(100, scores.mood + 4);
+    energy = Math.min(100, energy + 6);
+    mood = Math.min(100, mood + 4);
   }
 
   // Clamp all values
-  scores.mood = Math.max(0, Math.min(100, Math.round(scores.mood)));
-  scores.energy = Math.max(0, Math.min(100, Math.round(scores.energy)));
-  scores.stress = Math.max(0, Math.min(100, Math.round(scores.stress)));
+  mood = Math.max(0, Math.min(100, Math.round(mood)));
+  energy = Math.max(0, Math.min(100, Math.round(energy)));
+  stress = Math.max(0, Math.min(100, Math.round(stress)));
 
   // Confidence is lower for fallback (keywords only)
   const baseConfidence = classification.sentiment === 'Crisis' ? 70 : 50;
 
   return {
-    ...scores,
+    mood,
+    energy,
+    stress,
     confidence: baseConfidence,
     reasoning: 'Fallback keyword-based wellness inference from sentiment',
   };

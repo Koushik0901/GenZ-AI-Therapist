@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { logger, logOrchestratorDecision } from '@/lib/logging';
+import { logger } from '@/lib/logging';
 
 // Phase 1 tools
 import { classifyWithConfidence } from '@/lib/tools/classification';
@@ -83,15 +83,15 @@ export async function runOrchestrator(args: {
       wellness,
     });
 
-    logOrchestratorDecision({
-      phase: 'phase_1_foundation',
-      decision: 'Classification complete',
-      details: {
+    // Phase 1 foundation complete
+    logger.debug(
+      {
         sentiment: classification.sentiment,
         intent: classification.intent,
         crisis_severity: crisis.severity,
       },
-    });
+      'Phase 1 Foundation complete'
+    );
 
     // ==================== PHASE 1.5: CLARIFICATION CHECK ====================
     // If confidence is low, ask clarifying questions instead of proceeding
@@ -120,11 +120,10 @@ export async function runOrchestrator(args: {
           clarificationQuestions.questions.join(' ') +
           '\n\nTake your time – just help me understand what would be most helpful for you right now.';
 
-        logOrchestratorDecision({
-          phase: 'phase_1_5_clarification',
-          decision: 'Asked clarification questions',
-          details: { question_count: clarificationQuestions.questions.length },
-        });
+        logger.debug(
+          { question_count: clarificationQuestions.questions.length },
+          'Asked clarification questions'
+        );
 
         return {
           response: clarificationResponse,
@@ -160,14 +159,13 @@ export async function runOrchestrator(args: {
       crisis,
     });
 
-    logOrchestratorDecision({
-      phase: 'phase_2_routing',
-      decision: 'Session type detected',
-      details: {
+    logger.debug(
+      {
         session_type: sessionType.primary_type,
         resource_search: resourceDecision.search_depth,
       },
-    });
+      'Phase 2 Routing: Session type detected'
+    );
 
     // ==================== SEARCH FOR RESOURCES (if needed) ====================
     let resources: ResourceItem[] = [];
@@ -180,7 +178,7 @@ export async function runOrchestrator(args: {
 
       const searchResults = await searchWeb(resourceDecision.search_query);
       const sanitized = sanitizeSearchResults(searchResults);
-      resources = normalizeResources(sanitized);
+      resources = normalizeResources(sanitized as any);
     }
 
     // ==================== GENERATE INITIAL RESPONSE ====================
@@ -233,14 +231,14 @@ export async function runOrchestrator(args: {
         crisis,
       });
 
-      logOrchestratorDecision({
-        phase: 'phase_3_regeneration',
-        decision: `Regeneration attempt ${regenerationAttempts}`,
-        details: {
+      logger.debug(
+        {
+          regeneration_attempt: regenerationAttempts,
           strategy: regenerationAttempt.strategy,
           new_quality: evaluation.overall_quality,
         },
-      });
+        'Phase 3 Regeneration'
+      );
 
       if (didRegenerationSucceed(evaluation)) {
         break;
@@ -260,15 +258,14 @@ export async function runOrchestrator(args: {
         currentSessionType: sessionType,
       });
 
-      logOrchestratorDecision({
-        phase: 'phase_3_patterns',
-        decision: 'Patterns detected',
-        details: {
+      logger.debug(
+        {
           pattern_count: patterns.patterns.length,
           trajectory: patterns.overall_trajectory,
           alerts: patterns.alerts,
         },
-      });
+        'Phase 3 Patterns detected'
+      );
 
       // If critical alerts, log them prominently
       if (patterns.alerts.length > 0) {
@@ -280,15 +277,14 @@ export async function runOrchestrator(args: {
     }
 
     // ==================== FINAL OUTPUT ====================
-    logOrchestratorDecision({
-      phase: 'complete',
-      decision: 'Response finalized',
-      details: {
+    logger.debug(
+      {
         response_quality: evaluation.overall_quality,
         regeneration_attempts: regenerationAttempts,
         session_type: sessionType.primary_type,
       },
-    });
+      'Response finalized'
+    );
 
     const duration = Date.now() - startTime;
     logger.debug(

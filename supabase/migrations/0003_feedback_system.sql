@@ -1,24 +1,8 @@
--- Feedback System Migration
--- Creates tables for user feedback and analytics
+-- Feedback System Migration (Phase 3+)
+-- Creates additional tables for advanced analytics
+-- Note: Basic feedback table is created in 0002_agentic_logging.sql
 
--- Feedback table: stores user thumbs up/down feedback
-CREATE TABLE IF NOT EXISTS public.feedback (
-  id BIGSERIAL PRIMARY KEY,
-  response_id TEXT NOT NULL,
-  session_id TEXT NOT NULL,
-  sentiment TEXT NOT NULL CHECK (sentiment IN ('positive', 'negative')),
-  comment TEXT,
-  created_at TIMESTAMP WITH TIME ZONE NOT NULL,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
--- Index for fast lookups by response and session
-CREATE INDEX IF NOT EXISTS idx_feedback_response_id ON public.feedback(response_id);
-CREATE INDEX IF NOT EXISTS idx_feedback_session_id ON public.feedback(session_id);
-CREATE INDEX IF NOT EXISTS idx_feedback_created_at ON public.feedback(created_at DESC);
-CREATE INDEX IF NOT EXISTS idx_feedback_sentiment ON public.feedback(sentiment);
-
--- Feedback Summary: aggregated metrics
+-- Feedback Summary: aggregated metrics (NEW)
 CREATE TABLE IF NOT EXISTS public.feedback_summary (
   id BIGSERIAL PRIMARY KEY,
   response_id TEXT NOT NULL,
@@ -130,7 +114,6 @@ CREATE INDEX IF NOT EXISTS idx_system_alerts_acknowledged ON public.system_alert
 CREATE INDEX IF NOT EXISTS idx_system_alerts_created_at ON public.system_alerts(created_at DESC);
 
 -- Grant permissions for anon access (if needed)
-GRANT SELECT, INSERT ON public.feedback TO anon;
 GRANT SELECT ON public.feedback_summary TO anon;
 GRANT SELECT, INSERT, UPDATE ON public.session_metadata TO anon;
 GRANT SELECT ON public.strategy_performance TO anon;

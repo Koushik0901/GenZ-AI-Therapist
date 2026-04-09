@@ -134,7 +134,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     if (error instanceof z.ZodError) {
       logger.warn(
-        { errors: error.errors },
+        { errors: error.issues },
         'Invalid strategy recommendation query'
       );
 
@@ -142,7 +142,7 @@ export async function GET(request: NextRequest) {
         {
           success: false,
           message: 'Invalid query parameters',
-          errors: error.errors,
+          errors: error.issues,
         },
         { status: 400 }
       );

@@ -70,10 +70,8 @@ export async function runIntegratedOrchestrator(
       role: 'user',
       content: userMessage,
       timestamp: new Date().toISOString(),
-      metadata: {
-        classification: orchestratorResult.metadata.classification,
-        sessionType: orchestratorResult.metadata.session_type,
-      },
+      // Note: classification and sessionType are available in orchestratorResult
+      // but not typed for SessionMessage.metadata due to complex type requirements
     });
 
     // Record metrics

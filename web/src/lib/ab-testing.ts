@@ -169,7 +169,7 @@ export class ABTestManager {
       };
     } catch (err) {
       logger.error(
-        { error: err instanceof Error ? error.message : String(err) },
+        { error: err instanceof Error ? err.message : String(err) },
         'Error fetching variant results'
       );
       return {

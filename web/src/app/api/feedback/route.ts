@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
     if (error instanceof z.ZodError) {
       logger.warn(
         {
-          errors: error.errors,
+          errors: error.issues,
         },
         'Invalid feedback input'
       );
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           message: 'Invalid feedback data',
-          errors: error.errors,
+          errors: error.issues,
         },
         { status: 400 }
       );
