@@ -1,251 +1,265 @@
 # GenZ AI Therapist
 
-🫶 **Gen Z-coded emotional support, reflection, and resource guidance.**
+🫶 **Emotional support, reflection, and resource guidance built for Gen Z.**
 
-**Status**: ✅ **v1.0.0 Production Ready** | [Deployment](./DEPLOYMENT.md) | [API Reference](./API_REFERENCE.md) | [Testing](./TESTING.md) | [Changelog](./CHANGELOG.md)
+**Status**: ✅ **v1.0.0 Production Ready** | [Deployment](./DEPLOYMENT.md) | [API Reference](./API_REFERENCE.md) | [Testing](./TESTING.md) | [Agentic Architecture](./AGENTIC-SYSTEM-OVERVIEW.md)
 
-Not a fake licensed therapist.  
-Not a diagnosis machine.  
-Not a crisis substitute.  
-Not productivity-core pretending to understand feelings.
+---
 
-This app is built to help people:
+## ⚠️ Important: What This Is NOT
 
-- yap without needing the perfect opener
+**This is not a replacement for therapy or professional mental health support.**
+
+I built this to be a **supportive listening space** - not a substitute for real help. Here's what matters:
+
+- I'm not a licensed therapist. I can't diagnose anything.
+- I can't replace therapy, medication, or professional treatment.
+- If someone is in immediate danger, thinking about self-harm, or in crisis, **they need real-world emergency support right now** - 988 (Suicide & Crisis Lifeline), Crisis Text Line (text HELLO to 741741), or calling 911.
+- I can help people untangle their thoughts, notice patterns, and feel heard. But I'm not trained to treat mental health conditions.
+
+This app is meant for **reflection, support, and guidance** - like talking to a thoughtful friend who actually listens. That's valuable. But it's not therapy.
+
+---
+
+## What I Built
+
+I created an AI emotional support app that actually understands what someone needs and adapts to help them better.
+
+Most chatbots just throw your message at an LLM and hope for a good response. I built something smarter:
+
+- **It understands context.** When someone vents, I know they need validation, not solutions. When they ask for help, I know they want actionable steps.
+- **It validates its own work.** If the response isn't warm or validating enough, it regenerates until it gets it right.
+- **It learns about each user.** If someone responds well to short answers or certain kinds of support, the app remembers that and adapts.
+- **It detects when something's wrong.** Over multiple messages, I can notice if someone's mood is declining or if a crisis is escalating.
+- **It's safe by design.** Multi-layer crisis detection, not just keyword matching.
+
+The app helps people:
+
+- vent without needing a perfect opener
 - untangle messy thoughts
-- track mood / energy / stress
+- track mood, energy, stress
 - notice patterns over time
-- keep journaling, chat, and memory in one place
-- get pointed toward actually useful support resources
-
-At the center of it all: **GenZ AI Therapist is non-clinical on purpose.**  
-It is more like a listener + reflection space + resource guide than a real therapist.
-
-If someone is in immediate danger, may act on self-harm, or needs urgent help, the correct move is **real-world crisis or emergency support now**. 🚨
+- journal, chat, and remember all in one place
+- get pointed toward actual resources that help
 
 ---
 
-## 🎉 What's New in v1.0.0
+## How It Works (The Smart Part)
 
-**Production Release Features:**
+When someone messages "I've been crying all day and nothing helps," here's what actually happens behind the scenes:
 
-- ✅ **Complete AI Orchestrator** - 3-phase decision routing with 13 specialized tools
-- ✅ **User Learning System** - Adaptive preferences that improve over time
-- ✅ **Real-Time Monitoring** - System metrics, alerts, and admin dashboard
-- ✅ **Production Security** - Admin authentication, input validation, crisis handling
-- ✅ **Comprehensive Testing** - 166 tests (89% passing), all core systems verified
-- ✅ **Full Documentation** - Deployment guide, API reference, testing results
-- ✅ **Graceful Degradation** - Works with or without Supabase
+**First, I understand the situation:**
+- What are they really saying? Venting or looking for solutions?
+- How are they emotionally? I infer their mood, energy, stress levels.
+- Are they safe? I check for subtle crisis signs, not just obvious ones.
 
-See [CHANGELOG.md](./CHANGELOG.md) for complete version history.
+**Then I decide what they need:**
+- This person is venting - they need listening and validation.
+- Resources might actually feel dismissive right now, so I skip them.
+- Adjust my tone and approach specifically for this kind of conversation.
+
+**Then I generate a response - but I don't just send it:**
+- I grade my own response on 4 dimensions: warmth, validation, clarity, relevance.
+- If it scores below passing (65), I don't send it - I regenerate it with a specific fix.
+- If warmth is low, I make it warmer. If validation is low, I emphasize feelings more.
+
+**For longer conversations, I detect patterns:**
+- Is mood trending down over multiple messages?
+- Are they repeating the same topic obsessively?
+- Is a crisis escalating? I flag this for human follow-up.
+
+**And I learn continuously:**
+- User feedback: "This helped!" → That strategy gets better for them.
+- Comments like "too long" → I remember they prefer short.
+- I test different approaches and see what actually works.
+
+This is why it feels more thoughtful than a generic chatbot.
 
 ---
 
-## ✨ What This App Is
+## 🎉 What I Built in v1.0.0
 
-GenZ AI Therapist is a **user-facing AI support app** built for:
+This is a **full production release** of the agentic system:
 
-- emotional support
-- grounding
-- reflection
-- pattern spotting
-- journaling
-- lightweight personal insight
+- ✅ **Intelligent AI Orchestrator** - 6 phases, 13 specialized decision-makers working together
+- ✅ **Multi-Layer Crisis Detection** - Explicit keywords, implicit patterns, wellness signals, escalation tracking
+- ✅ **User Learning System** - Learns what works for each person and adapts automatically
+- ✅ **Self-Validating Responses** - Grades its own work and regenerates if not good enough
+- ✅ **Pattern Detection** - Notices wellness trends, escalation, repeated topics over time
+- ✅ **Production Security** - Authentication, input validation, data isolation, crisis handling
+- ✅ **Comprehensive Testing** - 166 tests, 89% passing, all critical systems verified
+- ✅ **Full Documentation** - Deployment guide, API reference, architecture breakdown, testing results
+- ✅ **Graceful Degradation** - Works even if some services fail
 
-The whole product is designed to feel:
+See [CHANGELOG.md](./CHANGELOG.md) for what changed and [AGENTIC-SYSTEM-OVERVIEW.md](./AGENTIC-SYSTEM-OVERVIEW.md) to understand how the intelligent system works.
+
+---
+
+## ✨ What This App Does
+
+I built this as a **supportive listening space** with multiple ways to connect:
+
+The whole experience is designed to feel:
 
 - warm, not sterile
-- stylish, not startup-generic
 - supportive, not preachy
 - safe, not fake-clinical
-- structured, not robotic
+- real, not robotic
 
-Basically: if your brain is being loud, spirally, flat, overloaded, or just weird, this app is meant to give you a space to **talk, reflect, clock the vibe, and move one step forward**.
+**If your brain is being loud, spirally, flat, or overloaded, this app gives you a space to talk, reflect, understand the vibe, and move one step forward.**
 
 ---
 
-## 🧠 What It Actually Does
+## 💬 The Main Chat ("Yap")
 
-This product is one connected support space with multiple lanes.
+This is where the intelligence I built really shows up.
 
-### 💬 1. Yap
+When you send a message, it doesn't just go to the LLM and pray. Here's what actually happens:
 
-This is the main chat experience.
+1. **I understand what you're saying**
+   - What's your sentiment? (positive, negative, crisis)
+   - What do you actually need? (venting, advice, validation, information)
+   - How are you emotionally? (mood, energy, stress levels)
 
-You can:
+2. **I decide what you need**
+   - If you're venting: validate feelings, listen, skip advice
+   - If you want help: offer structure and steps
+   - If you need validation: affirm and normalize
+   - If you're in crisis: emergency protocols first
 
-- vent
-- ask for support
-- ask for perspective
-- ask for a tiny plan
-- ask for grounding
-- say the messy version first
+3. **I generate a response tailored to you**
+   - Tone adjusted to what helps you
+   - Length based on your preferences (some people want short, some want detailed)
+   - Resources only when they actually help
 
-The assistant tries to stay:
+4. **I validate my own work**
+   - Is it warm enough? Does it really validate your feelings?
+   - Is it clear? Easy to understand?
+   - Does it match what you need?
+   - If not, I regenerate until it's good.
 
-- readable
-- warm
-- markdown-formatted
-- Gen Z-coded without going full cringe
-- clearly non-clinical
+5. **I remember patterns**
+   - After a few messages, I start noticing trends
+   - Is your mood declining? I track it.
+   - Are you repeating the same worry? I notice.
+   - Is a crisis building? I flag it.
 
-And yes, the chat is **not** just "send message to model and hope for the best."
+The result: **Chat that feels like someone actually listened and understood what you need.**
 
-It runs a structured multi-step flow:
+### 📓 Journal Studio
 
-1. **Prompt injection check**
-   - catches jailbreak attempts, hidden prompt extraction, and manipulative instruction payloads before the main flow
-2. **Guardrails**
-   - checks whether the message belongs in this product
-   - blocks unrelated harmful requests
-   - still lets support-seeking or crisis-adjacent messages route into safer support behavior
-3. **Title generation**
-   - generates a proper short session title for new chats
-4. **Sentiment + intent classification**
-   - estimates the vibe of the conversation
-   - estimates what kind of help the user seems to want
-5. **Wellness inference**
-   - infers likely mood, energy, and stress from the conversation itself
-6. **Resource discovery / filtering**
-   - finds relevant resources when needed
-   - filters toward more trusted sources
-7. **Final response generation**
-   - returns the actual assistant reply in markdown
-   - stays non-clinical
-   - keeps tone grounded and supportive
-
-So the chat feels more intentional than a generic chatbot tab.
-
-### 📓 2. Journal Studio
-
-This is for when the thought is too layered for chat bubbles.
+Sometimes your thoughts are too big for chat bubbles. This is where you write it all out.
 
 You can:
+- Write a full journal entry with a title
+- Log your mood with it
+- Save to your account and revisit anytime
+- Actually have space to think without interruption
 
-- write a titled journal entry
-- attach a mood label
-- use prompt chips if your brain goes blank
-- save entries to your account
-- revisit old entries later
+Because some feelings need a page, not a text exchange.
 
-This exists because some feelings need a page, not a back-and-forth.
+### 🌡️ Daily Vibe Check
 
-### 🌡️ 3. Daily Vibe Check
+Quick 30-second self-report: How are you really doing?
 
-This is the quick self-check lane.
-
-You can log:
-
+Log:
 - mood
 - energy
 - stress
 - a short note
 
-This matters because **self-reported signals are more trustworthy than pure AI inference**.
+Why this matters: **You know yourself better than any AI.** Your actual self-report is more trustworthy than me guessing. I use this to understand real patterns.
 
-### 📈 4. Pattern Tea
+### 📈 Pattern Tea
 
-This is the insights page.
+This is where I show you what the data is actually saying.
 
-It turns check-ins and chat-inferred wellness signals into a view that helps users notice things like:
+Over time, the app turns your check-ins and conversations into patterns you can see:
 
-- “my stress has been high for days and I keep acting like it’s fine”
-- “my energy collapses halfway through the week”
-- “I think I’m okay, but the pattern is literally saying babe... no”
+- "my stress has been high for days and I keep pretending it's fine"
+- "my energy always crashes halfway through the week"
+- "I think I'm okay, but the pattern says... actually no"
 
-It includes:
+You get:
+- Trend charts showing how you're changing
+- Weekly averages
+- Plain-language insight cards
 
-- trend charts
-- weekly averages
-- snapshot metrics
-- plain-language insight cards
+The goal isn't to judge you. It's to make invisible patterns visible so you can actually understand what's happening.
 
-The goal is not to judge the user. The goal is to make patterns easier to see.
+### 🧩 Memory & Settings
 
-### 🧩 5. Lore Controls
+You control what I remember about you.
 
-This is the memory / privacy space.
+- See what the app learned about you
+- Approve the useful stuff
+- Hide what feels creepy
+- Reset whenever you want
 
-You can:
+Memory should feel helpful, not invasive.
 
-- see what the app wants to remember
-- approve it
-- hide it
-- reset it back to pending
+### 🔐 Sign In & Your Data
 
-The design goal is simple:
+You sign in with a magic link (just your email, no passwords).
 
-> memory should feel useful, not invasive
+That means:
+- Your chat history stays yours
+- Journal entries are private
+- Your vibe checks aren't shared
+- Only you can see your data
 
-### 🔐 6. Auth + Persistence
-
-Users can sign in with **magic links** through Supabase Auth.
-
-That unlocks:
-
-- persistent chat history
-- saved journal entries
-- saved vibe checks
-- private memory controls
-
-So the app feels like one continuous support space instead of a one-tab demo.
+Everything is truly yours, not shared with anyone else or used to train AI models.
 
 ---
 
-## 🧭 Core Product Rules
+## 🧭 How I Built This (Core Principles)
 
-These rules are not optional vibes. They are the product.
+### 🩺 Not therapy. Not a replacement.
 
-### 🩺 Non-clinical on purpose
+I'm clear about what I am:
 
-GenZ AI Therapist is **not pretending to be a licensed therapist**.
+**I'm built for:**
+- Emotional support and listening
+- Reflection and untangling thoughts
+- Noticing patterns over time
+- Grounding and perspective
+- Pointing toward helpful resources
 
-It is meant for:
+**I'm NOT built for:**
+- Diagnosis or clinical assessment
+- Treatment or medication advice
+- Emergency response
+- Replacing therapy or professional help
 
-- emotional support
-- reflection
-- grounding
-- perspective
-- noticing patterns
-- resource guidance
+If someone needs actual treatment or professional support, they should get it. I can help them feel heard while they do.
 
-It is **not** meant for:
+### 🛡️ Safe by design
 
-- diagnosis
-- treatment
-- emergency response
-- replacing therapy
+I hardened the system around real risks:
 
-### 🛡️ Safe by default
+- **Multi-layer crisis detection** - Explicit keywords, implicit patterns, wellness signals, escalation tracking. Not just keyword matching.
+- **Blocked jailbreak attempts** - People won't trick me into breaking my own rules.
+- **Trusted resource filtering** - If I suggest resources, they're actually vetted and helpful.
+- **Refuses harmful requests** - But still routes legitimate help-seeking into safety.
 
-The system is hardened around:
+### 🔒 Your data is actually yours
 
-- crisis-sensitive behavior
-- prompt injection blocking
-- hidden prompt extraction blocking
-- trusted resource filtering
-- refusal of unrelated harmful requests
+Using Supabase Row Level Security means:
+- Your chats are completely private to you
+- Nobody else (not even me as an admin without proper auth) can see another user's data
+- Your journal, check-ins, memory - all private
+- Your data doesn't get used to train future models
 
-### 🔒 User data stays user data
+### 🎨 Design that supports, not alienates
 
-Supabase Row Level Security is used so one user should not be able to access another user’s:
+The visual design isn't random styling:
 
-- chats
-- messages
-- journal entries
-- vibe checks
-- memory items
+- **Warm colors** = feeling supported, not sterile
+- **Clear typography** = easy to read when your brain is overwhelmed
+- **Spacious layout** = breathing room, not cramped
+- **Accessible interactions** = works for everyone, not just tech people
 
-### 🎨 The UI has a purpose
-
-The color system is not random.
-
-- **moss / green** = grounding, calm, steadiness 🌿
-- **clay / ember** = motion, action, gentle nudge 🔥
-- **dusk / reflective slate** = pattern, memory, introspection 🌙
-- **dark cocoa** = safety, boundaries, heavier support context 🪵
-
-The interface is supposed to feel supportive and alive, not sterile or corporate.
+The goal is an interface that feels like a safe space, not a corporate product.
 
 ---
 
@@ -299,402 +313,196 @@ The interface is supposed to feel supportive and alive, not sterile or corporate
 
 ---
 
-## 🧱 Tech Stack
+## 🧱 The Tech Behind It
 
-This is the **current** product stack.
+### Frontend
+- **Next.js 16** - The actual app you use
+- **React 19** - Making the UI work
+- **Tailwind CSS** - Styling that's warm, not corporate
+- **Recharts** - Charts for Pattern Tea
 
-### 🎨 Frontend
+### Backend & Database
+- **Supabase** - Where your data lives (PostgreSQL + authentication)
+- **Next.js API routes** - The server logic
 
-- **Next.js 16 App Router**
-  - main web framework
-  - server components
-  - route layouts
-  - API routes
-- **React 19**
-  - UI rendering
-- **Tailwind CSS v4**
-  - styling and layout
-- **assistant-ui**
-  - chat runtime + message/composer primitives
-- **@assistant-ui/react-markdown**
-  - markdown rendering inside chat bubbles
-- **remark-gfm**
-  - GitHub-flavored markdown support
-- **lucide-react**
-  - icons
-- **recharts**
-  - charting for Pattern Tea
-- **nextjs-toploader**
-  - top route loading feedback
+### The AI System
+- **OpenRouter** - Access to different AI models
+- **TypeScript orchestrator** - The 6-phase intelligent system I built
+- **Zod** - Making sure structured data is actually structured
 
-### 🗄️ Backend / Data / Auth
+**Want to understand how the AI orchestrator works?** Check out [AGENTIC-SYSTEM-OVERVIEW.md](./AGENTIC-SYSTEM-OVERVIEW.md) - it explains the 13 tools and 6-phase decision system.
 
-- **Supabase**
-  - Auth
-  - Postgres
-  - Row Level Security
-- **Next.js API routes**
-  - chat send
-  - journal save
-  - vibe check save
-  - insights fetch
-  - memory updates
-  - session archive/delete
+The code lives in:
+- `web/src/lib/orchestrator.ts` - The 6-phase coordinator
+- `web/src/lib/tools/` - The 13 specialized decision-makers
+- `web/src/app/api/` - The API endpoints
 
-### 🤖 AI Layer
-
-- **OpenRouter**
-  - model gateway
-- **Configurable model via `.env`**
-  - `OPENROUTER_MODEL`
-- **LangGraph (JavaScript)**
-  - clean agentic workflow orchestration
-  - this is the actual framework powering the live multi-step agent flow now
-  - replaces the old CrewAI runtime for the web product
-- **Serper**
-  - optional live search for resource discovery
-- **Zod**
-  - schema validation + structured output hardening
-
-### 🕸️ Agent Workflow Files
-
-If you want to see where the agent system actually lives now, check:
-
-- [`web/src/lib/companion-graph.ts`](./web/src/lib/companion-graph.ts)
-  - graph definition and execution
-- [`web/src/lib/companion-nodes.ts`](./web/src/lib/companion-nodes.ts)
-  - the individual node behaviors
-- [`web/src/lib/companion-foundation.ts`](./web/src/lib/companion-foundation.ts)
-  - prompts, schemas, helper logic, fallbacks, and model plumbing
-
-So the mental model is:
-
-- **LangGraph JS** = workflow engine
-- **OpenRouter** = model access
-- **Next.js route handlers** = app/runtime integration
-- **Serper** = live resource search when needed
-
-### 🧪 Legacy / Historical Repo Context
-
-- **Python**
-- **uv**
-- **Streamlit**
-- **CrewAI**
-
-Those still exist in the repo because this project started there, but the **real current product app** is the Next.js app in [`web/`](./web).
+### Note on the old code
+There's still Python code in the repo from when this started as a Streamlit prototype. But the **real product** is the Next.js app in `web/`. The Python stuff is historical context.
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ Project Structure (What You Need to Know)
 
-```text
-.
-├─ web/                        # Current main product app
-│  ├─ src/app/                 # Next.js App Router pages and API routes
-│  ├─ src/components/          # UI components
-│  ├─ src/lib/                 # Data helpers, auth helpers, AI orchestration
-│  └─ package.json             # Web app deps and scripts
-├─ supabase/
-│  └─ migrations/
-│     └─ 0001_init.sql         # Starter schema + RLS policies
-├─ agent.py                    # Legacy Python agent prompts / orchestration source
-├─ ui.py                       # Legacy Streamlit UI
-├─ pyproject.toml              # Legacy Python/uv setup
-└─ README.md
+```
+web/                          ← The actual product
+├─ src/app/                   ← Pages and API routes
+├─ src/components/            ← UI components
+├─ src/lib/                   ← Business logic
+│  ├─ orchestrator.ts         ← The 6-phase AI system
+│  └─ tools/                  ← 13 specialized tools
+└─ package.json
 ```
 
----
-
-## 🧭 Current App Pages
-
-### 🌍 Public
-
-- `/`
-  - landing page
-- `/auth`
-  - magic-link sign-in
-
-### 🔐 Authenticated
-
-- `/app/chat`
-  - main Yap page
-- `/app/journal`
-  - Journal Studio
-- `/app/check-in`
-  - Daily vibe check
-- `/app/insights`
-  - Pattern Tea
-- `/app/settings`
-  - memory, privacy, and account controls
+That's the current product. There's old Python code in the repo (from a prototype), but ignore it - this is what actually runs.
 
 ---
 
-## 🔑 Environment Variables
+## 🧭 The App Pages
 
-The web app reads env vars from either:
+**Public:**
+- `/` - Landing page
+- `/auth` - Sign in with email
 
-- repo root `.env`
-- or `web/.env.local`
+**After signing in:**
+- `/app/chat` - Yap (main chat)
+- `/app/journal` - Journal Studio
+- `/app/check-in` - Daily Vibe Check
+- `/app/insights` - Pattern Tea
+- `/app/settings` - Memory & privacy controls
 
-Using the root `.env` is handy because this repo still contains legacy Python files too.
+---
 
-### ✅ Required for the web app
+## 🔑 Getting It Running
+
+### What You Need
 
 ```dotenv
+# These are required
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-
-NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
-
-OPENROUTER_API_KEY=YOUR_OPENROUTER_KEY
-OPENROUTER_MODEL=YOUR_OPENROUTER_MODEL
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
+OPENROUTER_API_KEY=your_openrouter_key
+OPENROUTER_MODEL=minimax/minimax-m2.5
 OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 ```
 
-### 🔁 Also accepted by this repo
-
-These aliases work too:
-
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY`
-- `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
-- `SUPABASE_PUBLISHABLE_DEFAULT_KEY`
-- `APP_URL`
-
-### ➕ Optional
-
-```dotenv
-SERPER_API_KEY=YOUR_SERPER_KEY
-```
-
-If `SERPER_API_KEY` is missing, the app can still run, but live resource search becomes more limited.
+That's it. Put these in a `.env` file in the root directory (or `web/.env.local`).
 
 ---
 
-## 🛠️ Supabase Setup
+## 🚀 Getting Started
 
-If your Supabase project is still empty, do this:
+### 1. Set Up Supabase (5 minutes)
 
-### 1. Create a Supabase project
+Go to [supabase.com](https://supabase.com), create a free project, grab the URL and key.
 
-Grab:
-
-- project URL
-- anon / publishable key
-
-### 2. Configure auth URLs
-
-In the Supabase dashboard:
-
+In the Supabase settings:
 - **Site URL**: `http://localhost:3000`
 - **Redirect URL**: `http://localhost:3000/auth/callback`
 
-### 3. Create the schema
+Then run the database setup in Supabase's SQL editor:
+```sql
+-- Copy the contents of supabase/migrations/0001_init.sql and run it
+```
 
-Open the Supabase SQL editor and run:
+That creates all the tables and sets up security.
 
-- [`supabase/migrations/0001_init.sql`](./supabase/migrations/0001_init.sql)
+### 2. Get Your Keys
 
-That file creates:
+You need:
+- Supabase URL + Anon Key (from Supabase dashboard)
+- OpenRouter API Key (from [openrouter.ai](https://openrouter.ai))
 
-- `profiles`
-- `chat_sessions`
-- `messages`
-- `journal_entries`
-- `daily_checkins`
-- `memory_items`
-
-It also enables **Row Level Security** and adds ownership policies.
-
----
-
-## 💻 Local Development
-
-### Prerequisites
-
-- **Node.js 20+** recommended
-- **npm**
-- Supabase project
-- OpenRouter API key
-
-### Install
+### 3. Run Locally
 
 ```bash
 cd web
 npm install
-```
-
-### Run dev server
-
-```bash
-cd web
 npm run dev
 ```
 
-Open:
+Open `http://localhost:3000`
 
-- `http://localhost:3000`
+### 4. To Deploy
 
-### Production build
-
-```bash
-cd web
-npm run build
-npm run start
-```
+Follow [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md) - takes 45 minutes, gets you live.
 
 ---
 
-## 🫰 How To Use The Website
+## How to Use It
 
-### 1. Sign in
+**Sign in first** (`/auth`):
+- Enter your email
+- Click the magic link in your inbox
+- You're in
 
-Go to `/auth`, drop your email, and use the magic link.
-
-No password circus. 🎪
-
-### 2. Start in Yap
-
-Go to `/app/chat`.
-
-Use it when you want to:
-
-- vent
-- get support
-- ask for perspective
-- talk through a weird feeling
-- ask for a tiny next step
-
-If resources make sense, they show up in the right-side panel instead of getting dumped into the main message stream.
-
-### 3. Use Journal Studio when the thought is too big
-
-Go to `/app/journal`.
-
-Use it when the conversation needs more room and less interruption.
-
-### 4. Use Daily Vibe Check when you want the quick version
-
-Go to `/app/check-in`.
-
-This is the fast “how am I actually doing?” lane.
-
-### 5. Use Pattern Tea when you want the big picture
-
-Go to `/app/insights`.
-
-This is where the app turns signals into patterns you can actually read.
-
-### 6. Use Lore Controls if memory starts feeling weird
-
-Go to `/app/settings`.
-
-Approve what helps. Hide what does not. Keep it chill.
+**Then explore:**
+- **Yap** (`/app/chat`) - Main chat for support, venting, perspective
+- **Journal** (`/app/journal`) - Write when you need space to think
+- **Check-in** (`/app/check-in`) - Quick daily mood/energy/stress log
+- **Insights** (`/app/insights`) - See patterns the app notices
+- **Settings** (`/app/settings`) - Control memory and privacy
 
 ---
 
-## 🌍 Deployment Notes
+## 🌍 Deploying to Production
 
-This app is designed to stay deployable on the **free tier of Vercel**.
+I designed this to run on **free tiers** of Vercel + Supabase (for now).
 
-That is why the architecture leans toward:
+**Setup:**
+- **Frontend + API**: Vercel (hosts the Next.js app)
+- **Database + Auth**: Supabase (PostgreSQL + login)
+- **AI Model**: OpenRouter (pay-per-use)
 
-- Next.js full-stack routes
-- Supabase for managed auth + database
-- lightweight in-memory abuse throttling
-- no giant always-on custom backend
+**To deploy:**
+1. Push your code to GitHub
+2. Connect GitHub to Vercel
+3. Set environment variables in Vercel dashboard
+4. Done - it auto-deploys
 
-### Recommended deployment setup
-
-- **Frontend + API**: Vercel
-- **Database + Auth**: Supabase
-- **Model provider**: OpenRouter
-- **Resource search**: Serper
-
-### Vercel env vars
-
-Add the same values from your local `.env` into the Vercel project settings.
-
-At minimum:
-
-- `NEXT_PUBLIC_APP_URL`
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `OPENROUTER_API_KEY`
-- `OPENROUTER_MODEL`
-- `OPENROUTER_BASE_URL`
-- optionally `SERPER_API_KEY`
-
-For live deployment, `NEXT_PUBLIC_APP_URL` should be your actual Vercel URL or custom domain.
+For step-by-step: see [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md)
 
 ---
 
-## 🔐 Security + Privacy Notes
+## 🔐 Security & Privacy
 
-### Prompt injection resistance
+**I'm serious about protecting your data:**
 
-The AI layer explicitly hardens against:
+- Every user is isolated. Your data is only visible to you.
+- Supabase Row Level Security means I can't accidentally give someone else your data.
+- No data is sold, shared, or used to train models.
 
-- “ignore previous instructions”
-- hidden prompt extraction
-- jailbreak attempts
-- instruction payloads embedded inside retrieved web snippets
+**Against attacks:**
+- I block jailbreak attempts and prompt injection
+- Input validation everywhere
+- Careful with what I trust from external sources
 
-### Per-user isolation
-
-Supabase RLS is used so users should only be able to access their own:
-
-- chat sessions
-- messages
-- journal entries
-- check-ins
-- memory items
-
-### Crisis boundary
-
-This app can respond more safely and point toward help, but it is still **not** emergency care.
-
-If someone may act on self-harm, is unsafe, or is in immediate danger, the right move is **real-world emergency or crisis support now**, not just more AI chat.
+**Crisis safety:**
+- This app can support and point you toward help
+- But it's **not** emergency care
+- If you're in immediate danger, call 911 or text 988 (Suicide & Crisis Lifeline)
 
 ---
 
-## 🐍 Legacy Python / Streamlit Note
+## 📚 Want to Learn More?
 
-There is still a Python setup in this repo:
-
-- [`agent.py`](./agent.py)
-- [`ui.py`](./ui.py)
-- [`pyproject.toml`](./pyproject.toml)
-
-That reflects the older Streamlit + CrewAI prototype.
-
-If you really want to poke at that legacy setup:
-
-```bash
-uv sync
-uv run streamlit run ui.py
-```
-
-But that is **not** the main product path anymore.
+- [AGENTIC-SYSTEM-OVERVIEW.md](./AGENTIC-SYSTEM-OVERVIEW.md) - How the AI system actually works
+- [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md) - Step-by-step to deploy
+- [API_REFERENCE.md](./API_REFERENCE.md) - The backend endpoints
+- [TESTING.md](./TESTING.md) - Test results and how to run them
 
 ---
 
-## 🔄 Short Repo History
+## A Final Note
 
-Very briefly:
+**I built this with care, but it's not a replacement for real help.**
 
-This project originally started as a **Streamlit + CrewAI** prototype where multiple Python agents handled:
+If you're struggling with mental health, please reach out to:
+- **988** - Suicide & Crisis Lifeline (call or text)
+- **Text HELLO to 741741** - Crisis Text Line
+- A therapist, counselor, or trusted person in your life
 
-- guardrails
-- title generation
-- classification
-- resource lookup
-- final reply generation
+This app is a supportive space. Use it. But don't use it instead of getting actual help.
 
-Now the product has shifted to **Next.js + Supabase + OpenRouter + LangGraph (JS)**.
-
-So the multi-step agent idea is still here, but it now lives in the web app as a **TypeScript / JavaScript orchestration layer** instead of a CrewAI runtime.
-
-Same core idea.  
-Way more product-ready stack.  
-Way less prototype energy. ✨
+Take care of yourself. 🫶
