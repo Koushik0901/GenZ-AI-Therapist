@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
  * ResponseFeedback Component
  * Simple thumbs up/down widget for user feedback on responses
  * Shows optional comment field for negative feedback
+ * Persists feedback state to prevent duplicate submissions
  */
 
 interface ResponseFeedbackProps {
@@ -22,6 +23,8 @@ export interface FeedbackData {
   timestamp: string;
 }
 
+const STORAGE_KEY_PREFIX = 'feedback_';
+
 export default function ResponseFeedback({
   responseId,
   sessionId,
@@ -32,6 +35,28 @@ export default function ResponseFeedback({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Load persisted feedback on mount
+  useEffect(() => {
+    const storageKey = `${STORAGE_KEY_PREFIX}${responseId}`;
+    const persistedFeedback = localStorage.getItem(storageKey);
+    
+    if (persistedFeedback) {
+      try {
+        const parsed = JSON.parse(persistedFeedback);
+        setSubmitted(true);
+        setSentiment(parsed.sentiment);
+        setComment(parsed.comment || '');
+        
+        // Hide widget after 2 seconds if feedback already submitted
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 2000);
+      } catch (err) {
+        // Ignore parse errors
+      }
+    }
+  }, [responseId]);
 
   const handleFeedback = async (newSentiment: 'positive' | 'negative') => {
     setSentiment(newSentiment);
@@ -66,6 +91,10 @@ export default function ResponseFeedback({
       if (!response.ok) {
         throw new Error('Failed to submit feedback');
       }
+
+      // Persist feedback to local storage to prevent duplicate submissions
+      const storageKey = `${STORAGE_KEY_PREFIX}${responseId}`;
+      localStorage.setItem(storageKey, JSON.stringify(feedbackData));
 
       setSubmitted(true);
       setSentiment(null);

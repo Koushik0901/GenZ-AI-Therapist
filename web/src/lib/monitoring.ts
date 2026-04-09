@@ -227,32 +227,60 @@ export class MonitoringService {
 
   /**
    * Acknowledge alert
+   * Returns true if alert was found and acknowledged, false otherwise
    */
-  async acknowledgeAlert(alertId: string, acknowledgedBy?: string): Promise<void> {
+  async acknowledgeAlert(
+    alertId: string,
+    metadata?: {
+      acknowledgedBy?: string;
+      notes?: string;
+    }
+  ): Promise<boolean> {
     if (!this.supabase) {
-      return;
+      logger.warn({ alert_id: alertId }, 'Cannot acknowledge alert: Supabase not configured');
+      return false;
     }
 
     try {
-      const { error } = await this.supabase
+      const updateData: Record<string, unknown> = {
+        acknowledged: true,
+        acknowledged_at: new Date().toISOString(),
+        acknowledged_by: metadata?.acknowledgedBy || null,
+      };
+
+      // Add notes if provided
+      if (metadata?.notes) {
+        updateData.notes = metadata.notes;
+      }
+
+      const { error, data } = await this.supabase
         .from('system_alerts')
-        .update({
-          acknowledged: true,
-          acknowledged_at: new Date().toISOString(),
-          acknowledged_by: acknowledgedBy || null,
-        })
-        .eq('id', alertId);
+        .update(updateData)
+        .eq('id', alertId)
+        .select('id');
 
       if (error) {
-        logger.warn({ error: error.message }, 'Failed to acknowledge alert');
-      } else {
-        logger.debug({ alert_id: alertId }, 'Alert acknowledged');
+        logger.warn({ error: error.message, alert_id: alertId }, 'Failed to acknowledge alert');
+        return false;
       }
+
+      const updated = (data && data.length > 0);
+      if (updated) {
+        logger.debug({ alert_id: alertId, acknowledged_by: metadata?.acknowledgedBy }, 'Alert acknowledged');
+      } else {
+        logger.warn({ alert_id: alertId }, 'Alert not found for acknowledgment');
+      }
+
+      return updated;
     } catch (err) {
       logger.error(
-        { error: err instanceof Error ? err.message : String(err) },
+        {
+          error: err instanceof Error ? err.message : String(err),
+          alert_id: alertId,
+        },
         'Error acknowledging alert'
       );
+      return false;
     }
   }
 

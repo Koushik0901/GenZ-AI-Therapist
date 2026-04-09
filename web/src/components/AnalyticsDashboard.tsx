@@ -87,6 +87,25 @@ export default function AnalyticsDashboard() {
     );
   }
 
+  const handleAcknowledgeAlert = async (alertId: string) => {
+    try {
+      const response = await fetch('/api/alerts/acknowledge', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ alert_id: alertId }),
+      });
+
+      if (response.ok) {
+        // Remove alert from display
+        setAlerts(alerts.filter((a) => a.id !== alertId));
+      }
+    } catch (err) {
+      console.error('Failed to acknowledge alert:', err);
+    }
+  };
+
   const getHealthColor = (quality: number) => {
     if (quality >= 70) return 'text-green-600';
     if (quality >= 50) return 'text-yellow-600';
@@ -188,8 +207,8 @@ export default function AnalyticsDashboard() {
                       : 'bg-blue-50 border-blue-400'
                 }`}
               >
-                <div className="flex justify-between items-start">
-                  <div>
+                <div className="flex justify-between items-start gap-4">
+                  <div className="flex-1">
                     <p className={`text-sm font-medium ${alert.severity === 'critical' ? 'text-red-700' : alert.severity === 'warning' ? 'text-yellow-700' : 'text-blue-700'}`}>
                       {alert.alert_type.replace(/_/g, ' ').toUpperCase()}
                     </p>
@@ -198,9 +217,19 @@ export default function AnalyticsDashboard() {
                       {new Date(alert.created_at).toLocaleString()}
                     </p>
                   </div>
-                  <span className={`px-2 py-1 rounded text-xs font-medium ${alert.acknowledged ? 'bg-gray-100 text-gray-700' : 'bg-orange-100 text-orange-700'}`}>
-                    {alert.acknowledged ? 'Acknowledged' : 'New'}
-                  </span>
+                  <div className="flex gap-2 items-center">
+                    <span className={`px-2 py-1 rounded text-xs font-medium whitespace-nowrap ${alert.acknowledged ? 'bg-gray-100 text-gray-700' : 'bg-orange-100 text-orange-700'}`}>
+                      {alert.acknowledged ? 'Acknowledged' : 'New'}
+                    </span>
+                    {!alert.acknowledged && alert.id && (
+                      <button
+                        onClick={() => handleAcknowledgeAlert(alert.id)}
+                        className="px-2 py-1 text-xs font-medium bg-white border border-neutral-300 rounded hover:bg-neutral-50 transition-colors"
+                      >
+                        ✓
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
