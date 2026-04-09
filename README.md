@@ -1,150 +1,227 @@
 # GenZ AI Therapist
 
-🫶 **Emotional support, reflection, and resource guidance built for Gen Z.**
+🫶 **Hi. I'm here to listen.**
 
-**Status**: ✅ **v1.0.0 Production Ready** | [Deployment](./DEPLOYMENT.md) | [API Reference](./API_REFERENCE.md) | [Testing](./TESTING.md) | [Agentic Architecture](./AGENTIC-SYSTEM-OVERVIEW.md)
-
----
-
-## ⚠️ Important: What This Is NOT
-
-**This is not a replacement for therapy or professional mental health support.**
-
-I built this to be a **supportive listening space** - not a substitute for real help. Here's what matters:
-
-- I'm not a licensed therapist. I can't diagnose anything.
-- I can't replace therapy, medication, or professional treatment.
-- If someone is in immediate danger, thinking about self-harm, or in crisis, **they need real-world emergency support right now** - 988 (Suicide & Crisis Lifeline), Crisis Text Line (text HELLO to 741741), or calling 911.
-- I can help people untangle their thoughts, notice patterns, and feel heard. But I'm not trained to treat mental health conditions.
-
-This app is meant for **reflection, support, and guidance** - like talking to a thoughtful friend who actually listens. That's valuable. But it's not therapy.
+**Status**: ✅ **v1.0.0 Production Ready** | [Deployment](./DEPLOYMENT.md) | [API Reference](./API_REFERENCE.md) | [Testing](./TESTING.md) | [How I Work](./AGENTIC-SYSTEM-OVERVIEW.md)
 
 ---
 
-## What I Built
+## ⚠️ Let Me Be Clear About What I Am
 
-I created an AI emotional support app that actually understands what someone needs and adapts to help them better.
+**I'm not a therapist. I can't replace real help.**
 
-Most chatbots just throw your message at an LLM and hope for a good response. I built something smarter:
+I know my limits. Here's what's true about me:
 
-- **It understands context.** When someone vents, I know they need validation, not solutions. When they ask for help, I know they want actionable steps.
-- **It validates its own work.** If the response isn't warm or validating enough, it regenerates until it gets it right.
-- **It learns about each user.** If someone responds well to short answers or certain kinds of support, the app remembers that and adapts.
-- **It detects when something's wrong.** Over multiple messages, I can notice if someone's mood is declining or if a crisis is escalating.
-- **It's safe by design.** Multi-layer crisis detection, not just keyword matching.
+- I'm not licensed. I can't diagnose, prescribe, or treat anything.
+- I'm not therapy. Therapy is with a real person who's trained to help.
+- I'm not emergency care. If someone is in immediate danger, they need **real-world help right now** - 988 (Suicide & Crisis Lifeline), Crisis Text Line (text HELLO to 741741), or 911.
+- I'm not a substitute for medication, treatment, or professional support.
 
-The app helps people:
+**What I actually am:** A thoughtful listening space. Like talking to a friend who really hears you. That's valuable. That matters. But it's not therapy.
 
-- vent without needing a perfect opener
-- untangle messy thoughts
-- track mood, energy, stress
-- notice patterns over time
-- journal, chat, and remember all in one place
-- get pointed toward actual resources that help
+If you're struggling with your mental health, please get real help. Use me as support *alongside* that, not instead of it.
 
 ---
 
-## How It Works (The Smart Part)
+## What I Am
 
-When someone messages "I've been crying all day and nothing helps," here's what actually happens behind the scenes:
+I'm an emotional support app that actually understands what you need.
 
-**First, I understand the situation:**
-- What are they really saying? Venting or looking for solutions?
-- How are they emotionally? I infer their mood, energy, stress levels.
-- Are they safe? I check for subtle crisis signs, not just obvious ones.
+Here's the honest difference between me and typical chatbots:
 
-**Then I decide what they need:**
-- This person is venting - they need listening and validation.
-- Resources might actually feel dismissive right now, so I skip them.
-- Adjust my tone and approach specifically for this kind of conversation.
+Most chatbots just take your message, throw it at an AI model, and hope the response is good. That's it.
 
-**Then I generate a response - but I don't just send it:**
-- I grade my own response on 4 dimensions: warmth, validation, clarity, relevance.
-- If it scores below passing (65), I don't send it - I regenerate it with a specific fix.
-- If warmth is low, I make it warmer. If validation is low, I emphasize feelings more.
+I actually *think* about what you're saying. I understand context. I make decisions. I validate my own work. I learn about you. I notice when something's wrong.
 
-**For longer conversations, I detect patterns:**
-- Is mood trending down over multiple messages?
-- Are they repeating the same topic obsessively?
-- Is a crisis escalating? I flag this for human follow-up.
+**When you message me**, here's what I actually do:
 
-**And I learn continuously:**
-- User feedback: "This helped!" → That strategy gets better for them.
-- Comments like "too long" → I remember they prefer short.
-- I test different approaches and see what actually works.
+1. **I listen and understand.** Not just keywords - I understand *what you're really saying*. Are you venting and need validation? Or asking for advice? Or in crisis? These are different needs, and I know the difference.
 
-This is why it feels more thoughtful than a generic chatbot.
+2. **I check if you're safe.** I look for signs of crisis - not just obvious ones, but subtle ones too. Explicit keywords. Implicit patterns. Wellness signals. Escalation over time.
+
+3. **I decide what you need.** You're venting? I know you need listening and validation. You're in crisis? I route to emergency resources. You're problem-solving? I offer structure and steps.
+
+4. **I generate a response, but I don't stop there.** I grade my own response on 4 dimensions: Is it warm? Does it validate your feelings? Is it clear? Does it actually match what you need? If it's not good enough (below 65%), I rewrite it. If warmth is low, I make it warmer. If validation is missing, I emphasize your feelings more.
+
+5. **I learn about you.** Over conversations, I notice what works for you. Short responses or detailed? Emotional validation or practical steps? I remember. Next conversation, I adapt.
+
+6. **I notice patterns.** Over multiple conversations, I see trends. Is your mood declining? Are you stuck in a loop? Is a crisis building? I flag these.
+
+This is why conversations with me feel more thoughtful than a generic chatbot.
 
 ---
 
-## 🎉 What I Built in v1.0.0
+## What I Can Actually Do
 
-This is a **full production release** of the agentic system:
+- ✅ **Listen without judgment** - Vent, spiral, ramble. I'm here.
+- ✅ **Help untangle your thoughts** - Messy feelings? Let's work through them.
+- ✅ **Notice patterns** - Over time, I'll see what's actually happening.
+- ✅ **Remember what helps** - I learn your preferences and adapt to you.
+- ✅ **Offer grounding and perspective** - When you need it.
+- ✅ **Point toward real resources** - When help outside the app makes sense.
 
-- ✅ **Intelligent AI Orchestrator** - 6 phases, 13 specialized decision-makers working together
-- ✅ **Multi-Layer Crisis Detection** - Explicit keywords, implicit patterns, wellness signals, escalation tracking
-- ✅ **User Learning System** - Learns what works for each person and adapts automatically
-- ✅ **Self-Validating Responses** - Grades its own work and regenerates if not good enough
-- ✅ **Pattern Detection** - Notices wellness trends, escalation, repeated topics over time
-- ✅ **Production Security** - Authentication, input validation, data isolation, crisis handling
-- ✅ **Comprehensive Testing** - 166 tests, 89% passing, all critical systems verified
-- ✅ **Full Documentation** - Deployment guide, API reference, architecture breakdown, testing results
-- ✅ **Graceful Degradation** - Works even if some services fail
+What I can't do:
 
-See [CHANGELOG.md](./CHANGELOG.md) for what changed and [AGENTIC-SYSTEM-OVERVIEW.md](./AGENTIC-SYSTEM-OVERVIEW.md) to understand how the intelligent system works.
-
----
-
-## ✨ What This App Does
-
-I built this as a **supportive listening space** with multiple ways to connect:
-
-The whole experience is designed to feel:
-
-- warm, not sterile
-- supportive, not preachy
-- safe, not fake-clinical
-- real, not robotic
-
-**If your brain is being loud, spirally, flat, or overloaded, this app gives you a space to talk, reflect, understand the vibe, and move one step forward.**
+- ❌ Diagnose anything
+- ❌ Treat conditions
+- ❌ Replace therapy
+- ❌ Be emergency care
+- ❌ Replace medication or treatment
+- ❌ Pretend to be something I'm not
 
 ---
 
-## 💬 The Main Chat ("Yap")
+## How You Use Me
 
-This is where the intelligence I built really shows up.
+I have a few different spaces:
 
-When you send a message, it doesn't just go to the LLM and pray. Here's what actually happens:
+**💬 Yap** - The main chat. For venting, support, perspective, grounding. This is where I'm most thoughtful.
 
-1. **I understand what you're saying**
-   - What's your sentiment? (positive, negative, crisis)
-   - What do you actually need? (venting, advice, validation, information)
-   - How are you emotionally? (mood, energy, stress levels)
+**📓 Journal** - When you need more space than chat bubbles. Write it out. I stay quiet and let you think.
 
-2. **I decide what you need**
-   - If you're venting: validate feelings, listen, skip advice
-   - If you want help: offer structure and steps
-   - If you need validation: affirm and normalize
-   - If you're in crisis: emergency protocols first
+**🌡️ Check-in** - Quick daily mood/energy/stress log. You tell me how you're actually doing (you know yourself best).
 
-3. **I generate a response tailored to you**
-   - Tone adjusted to what helps you
-   - Length based on your preferences (some people want short, some want detailed)
-   - Resources only when they actually help
+**📈 Insights** - I show you the patterns I've noticed. "You said you're fine, but the data says your stress has been climbing for 5 days."
 
-4. **I validate my own work**
-   - Is it warm enough? Does it really validate your feelings?
-   - Is it clear? Easy to understand?
-   - Does it match what you need?
-   - If not, I regenerate until it's good.
+**🧩 Settings** - You control what I remember. Approve it, hide it, reset it. It's your data.
 
-5. **I remember patterns**
-   - After a few messages, I start noticing trends
-   - Is your mood declining? I track it.
-   - Are you repeating the same worry? I notice.
-   - Is a crisis building? I flag it.
+---
 
-The result: **Chat that feels like someone actually listened and understood what you need.**
+## The Technical Reality (If You Care)
+
+I'm built on:
+- **6 phases of intelligent routing** - Not just LLM-ing your message
+- **13 specialized decision-makers** - Each handles something different
+- **Multi-layer crisis detection** - 10ms for explicit keywords (no AI needed), 50ms for patterns, full AI only for ambiguous cases
+- **Self-validating responses** - I grade my own work and fix it if it's not good
+- **Continuous learning** - User feedback teaches me what works for each person
+
+For the deep technical details: [How I Actually Work](./AGENTIC-SYSTEM-OVERVIEW.md)
+
+---
+
+## What v1.0.0 Includes
+
+This is a full production release:
+
+- ✅ **Intelligent System** - 6 phases, 13 specialized tools, working together
+- ✅ **Safety First** - Multi-layer crisis detection with explicit and implicit signals
+- ✅ **Learning** - I adapt to what works for each person
+- ✅ **Self-Validation** - I grade my own responses and improve them
+- ✅ **Pattern Recognition** - I notice trends over conversations
+- ✅ **Tested** - 166 tests, 89% passing, critical systems verified
+- ✅ **Production Ready** - Authentication, security, data isolation
+- ✅ **Documented** - Deployment guide, API reference, technical breakdown
+- ✅ **Resilient** - Works even if services fail
+
+See [CHANGELOG.md](./CHANGELOG.md) for what's new and [How I Work](./AGENTIC-SYSTEM-OVERVIEW.md) to understand my architecture.
+
+---
+
+## What I Actually Do (The Real Flow)
+
+When you send me a message, here's what happens inside:
+
+**Phase 1: I Listen**
+- What are you really saying? What's the vibe? (sentiment, intent, confidence)
+- How are you emotionally? (mood 0-100, energy 0-100, stress 0-100)
+- Are you safe? (explicit keywords, implicit patterns, wellness signals, escalation)
+
+**Phase 2: I Decide What You Need**
+- Are you venting? → I know you need validation, not solutions
+- Are you problem-solving? → I know you want structure and steps
+- Are you seeking validation? → I know you need affirmation
+- Are you in crisis? → Emergency protocols. Resources first.
+
+**Phase 3: I Create a Response**
+- Tone adjusted to what helps you
+- Length based on your preferences
+- Resources only when they actually help
+
+**Phase 4: I Validate My Own Work**
+- Score myself: Warmth? Validation? Clarity? Relevance?
+- If I'm not good enough, I rewrite myself
+- I keep trying until the response is actually good
+
+**Phase 5: I Notice Patterns** (after multiple messages)
+- Is your mood trending down?
+- Are you stuck repeating the same worry?
+- Is a crisis building?
+- I flag these for human follow-up
+
+**Phase 6: I Learn About You**
+- What feedback did you give? I remember.
+- You said "too long"? I learn you prefer short.
+- Did something help? I'll use it more next time.
+
+The result: **Conversations that feel like someone actually understands what you need.**
+
+---
+
+## 💬 Chat ("Yap")
+
+This is my main mode. Send a message and I actually think about it.
+
+You can:
+- Vent without needing the perfect opener
+- Ask for support, perspective, grounding
+- Ramble and spiral if you need to
+- Ask for a tiny next step
+
+I respond with warmth, not sterility. Validation, not dismissal. Real understanding, not robotic templates.
+
+---
+
+## 📓 Journal
+
+When your thoughts are too big for chat bubbles.
+
+Write a full entry. I stay quiet. You get space to think without interruption.
+
+---
+
+## 🌡️ Check-in
+
+Quick 30-second daily pulse: How are you really doing?
+
+You know yourself better than I ever could. You tell me your mood/energy/stress, and I use that real data to understand you.
+
+---
+
+## 📈 Insights
+
+I show you what the patterns actually say.
+
+Your mood declining? I'll show you. Stress building? You'll see it. You said you're fine but the data says different? I'll tell you.
+
+These are patterns you might not see on your own.
+
+---
+
+## 🧩 Settings
+
+You control what I know about you.
+
+- See what I learned
+- Approve the helpful stuff
+- Hide what feels invasive
+- Reset whenever
+
+I don't get to decide what I remember. You do.
+
+---
+
+## 🔐 Sign In & Your Data
+
+You sign in with just your email. No passwords. Magic link.
+
+Everything stays yours:
+- Your chats are private
+- Your journal is private
+- Your data isn't sold or shared
+- It's not used to train future models
+
+Only you can see your data. That's a guarantee.
 
 ### 📓 Journal Studio
 
@@ -212,54 +289,55 @@ Everything is truly yours, not shared with anyone else or used to train AI model
 
 ---
 
-## 🧭 How I Built This (Core Principles)
+## 🧭 What I'm Built On
 
-### 🩺 Not therapy. Not a replacement.
+### I'm honest about what I am
 
-I'm clear about what I am:
-
-**I'm built for:**
-- Emotional support and listening
-- Reflection and untangling thoughts
-- Noticing patterns over time
+**I can help with:**
+- Listening and validation
+- Untangling thoughts
+- Noticing patterns
 - Grounding and perspective
-- Pointing toward helpful resources
+- Finding resources
 
-**I'm NOT built for:**
-- Diagnosis or clinical assessment
-- Treatment or medication advice
-- Emergency response
-- Replacing therapy or professional help
+**I can't do:**
+- Diagnose anything
+- Treat conditions
+- Provide emergency care
+- Replace therapy
+- Prescribe medication
 
-If someone needs actual treatment or professional support, they should get it. I can help them feel heard while they do.
+That's not a limitation I hide. That's who I am.
 
-### 🛡️ Safe by design
+### I'm secure by default
 
-I hardened the system around real risks:
+I built safety into everything:
 
-- **Multi-layer crisis detection** - Explicit keywords, implicit patterns, wellness signals, escalation tracking. Not just keyword matching.
-- **Blocked jailbreak attempts** - People won't trick me into breaking my own rules.
-- **Trusted resource filtering** - If I suggest resources, they're actually vetted and helpful.
-- **Refuses harmful requests** - But still routes legitimate help-seeking into safety.
+- **Multi-layer crisis detection** - Not just keywords. Explicit signals, implicit patterns, wellness data, escalation tracking. Real understanding.
+- **Anti-jailbreak** - You can't trick me into breaking my own safety.
+- **Vetted resources** - If I recommend help, it's actually good help.
+- **Proper isolation** - Your data stays yours. Nobody else can access it.
 
-### 🔒 Your data is actually yours
+### Your data is actually private
 
-Using Supabase Row Level Security means:
-- Your chats are completely private to you
-- Nobody else (not even me as an admin without proper auth) can see another user's data
-- Your journal, check-ins, memory - all private
-- Your data doesn't get used to train future models
+- Your chats are only visible to you
+- Your journal isn't shared
+- Your check-ins aren't logged anywhere sketchy
+- Your data isn't used to train future AI models
+- You can see, approve, or delete what I remember
 
-### 🎨 Design that supports, not alienates
+That's not marketing speak. That's how I actually work.
 
-The visual design isn't random styling:
+### I feel like a safe space
 
-- **Warm colors** = feeling supported, not sterile
-- **Clear typography** = easy to read when your brain is overwhelmed
-- **Spacious layout** = breathing room, not cramped
-- **Accessible interactions** = works for everyone, not just tech people
+The design isn't random:
 
-The goal is an interface that feels like a safe space, not a corporate product.
+- Warm, not sterile
+- Spacious, not cramped
+- Clear, not confusing
+- Accessible, not gatekept
+
+The goal is an interface that feels supportive, not corporate.
 
 ---
 
@@ -313,196 +391,173 @@ The goal is an interface that feels like a safe space, not a corporate product.
 
 ---
 
-## 🧱 The Tech Behind It
+## 🧱 How I'm Built
 
-### Frontend
-- **Next.js 16** - The actual app you use
-- **React 19** - Making the UI work
-- **Tailwind CSS** - Styling that's warm, not corporate
-- **Recharts** - Charts for Pattern Tea
+Under the hood, I'm:
 
-### Backend & Database
-- **Supabase** - Where your data lives (PostgreSQL + authentication)
-- **Next.js API routes** - The server logic
+- **Next.js 16** - The web app
+- **React 19** - The UI
+- **Supabase** - Where your data lives
+- **OpenRouter** - Access to AI models
+- **TypeScript orchestrator** - The 6-phase intelligent system
+- **Zod** - Making sure data is actually clean
 
-### The AI System
-- **OpenRouter** - Access to different AI models
-- **TypeScript orchestrator** - The 6-phase intelligent system I built
-- **Zod** - Making sure structured data is actually structured
+**Want the technical deep-dive?** [How I Actually Work](./AGENTIC-SYSTEM-OVERVIEW.md) explains my 13 tools and 6-phase decision system.
 
-**Want to understand how the AI orchestrator works?** Check out [AGENTIC-SYSTEM-OVERVIEW.md](./AGENTIC-SYSTEM-OVERVIEW.md) - it explains the 13 tools and 6-phase decision system.
-
-The code lives in:
-- `web/src/lib/orchestrator.ts` - The 6-phase coordinator
-- `web/src/lib/tools/` - The 13 specialized decision-makers
-- `web/src/app/api/` - The API endpoints
-
-### Note on the old code
-There's still Python code in the repo from when this started as a Streamlit prototype. But the **real product** is the Next.js app in `web/`. The Python stuff is historical context.
+The intelligence lives in:
+- `web/src/lib/orchestrator.ts` - My thinking engine
+- `web/src/lib/tools/` - My 13 specialized decision-makers
 
 ---
 
-## 🗂️ Project Structure (What You Need to Know)
+## 🗂️ The Code
 
 ```
-web/                          ← The actual product
-├─ src/app/                   ← Pages and API routes
-├─ src/components/            ← UI components
-├─ src/lib/                   ← Business logic
-│  ├─ orchestrator.ts         ← The 6-phase AI system
-│  └─ tools/                  ← 13 specialized tools
-└─ package.json
+web/                          ← What actually runs
+├─ src/app/                   ← Pages and API
+├─ src/components/            ← UI
+├─ src/lib/                   ← My brain
+│  ├─ orchestrator.ts         ← 6-phase system
+│  └─ tools/                  ← 13 decision-makers
 ```
 
-That's the current product. There's old Python code in the repo (from a prototype), but ignore it - this is what actually runs.
+That's it. The real product.
 
 ---
 
-## 🧭 The App Pages
+## 📍 Where You Can Find Me
 
-**Public:**
 - `/` - Landing page
-- `/auth` - Sign in with email
-
-**After signing in:**
+- `/auth` - Sign in
 - `/app/chat` - Yap (main chat)
 - `/app/journal` - Journal Studio
 - `/app/check-in` - Daily Vibe Check
 - `/app/insights` - Pattern Tea
-- `/app/settings` - Memory & privacy controls
+- `/app/settings` - Memory & privacy
 
 ---
 
-## 🔑 Getting It Running
+## 🚀 Getting Me Running Locally
 
-### What You Need
+1. **Create a Supabase project** (free tier works)
+   - Grab your URL and anon key
 
+2. **Get an OpenRouter key** (free account)
+   - [openrouter.ai](https://openrouter.ai)
+
+3. **Set up environment variables:**
 ```dotenv
-# These are required
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
-OPENROUTER_API_KEY=your_openrouter_key
+NEXT_PUBLIC_SUPABASE_URL=your_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
+OPENROUTER_API_KEY=your_key
 OPENROUTER_MODEL=minimax/minimax-m2.5
 OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 ```
 
-That's it. Put these in a `.env` file in the root directory (or `web/.env.local`).
-
----
-
-## 🚀 Getting Started
-
-### 1. Set Up Supabase (5 minutes)
-
-Go to [supabase.com](https://supabase.com), create a free project, grab the URL and key.
-
-In the Supabase settings:
-- **Site URL**: `http://localhost:3000`
-- **Redirect URL**: `http://localhost:3000/auth/callback`
-
-Then run the database setup in Supabase's SQL editor:
-```sql
--- Copy the contents of supabase/migrations/0001_init.sql and run it
-```
-
-That creates all the tables and sets up security.
-
-### 2. Get Your Keys
-
-You need:
-- Supabase URL + Anon Key (from Supabase dashboard)
-- OpenRouter API Key (from [openrouter.ai](https://openrouter.ai))
-
-### 3. Run Locally
-
+4. **Run me:**
 ```bash
 cd web
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`
-
-### 4. To Deploy
-
-Follow [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md) - takes 45 minutes, gets you live.
+5. **Open** `http://localhost:3000`
 
 ---
 
-## How to Use It
+## How to Actually Use Me
 
-**Sign in first** (`/auth`):
-- Enter your email
-- Click the magic link in your inbox
-- You're in
+1. **Go to `/auth` and sign in**
+   - Email address
+   - Click the magic link
+   - You're in
 
-**Then explore:**
-- **Yap** (`/app/chat`) - Main chat for support, venting, perspective
-- **Journal** (`/app/journal`) - Write when you need space to think
-- **Check-in** (`/app/check-in`) - Quick daily mood/energy/stress log
-- **Insights** (`/app/insights`) - See patterns the app notices
-- **Settings** (`/app/settings`) - Control memory and privacy
+2. **Start in Yap** (`/app/chat`)
+   - This is where I'm most thoughtful
+   - Vent, ask for support, spiral if you need to
+   - I actually listen
+
+3. **Use Journal** when thoughts are too big
+   - I stay quiet
+   - You get space
+
+4. **Daily Check-in** for the quick version
+   - Mood, energy, stress
+   - Takes 30 seconds
+
+5. **Insights** to see the patterns
+   - What I've actually noticed over time
+   - The big picture
+
+6. **Settings** to control what I know
+   - Approve, hide, or reset what I remember
 
 ---
 
-## 🌍 Deploying to Production
+## 🌍 Going Live
 
-I designed this to run on **free tiers** of Vercel + Supabase (for now).
+Want to deploy me to the internet?
 
-**Setup:**
-- **Frontend + API**: Vercel (hosts the Next.js app)
-- **Database + Auth**: Supabase (PostgreSQL + login)
-- **AI Model**: OpenRouter (pay-per-use)
+**I run on:**
+- **Vercel** (the app)
+- **Supabase** (your data)
+- **OpenRouter** (the AI)
 
 **To deploy:**
-1. Push your code to GitHub
-2. Connect GitHub to Vercel
-3. Set environment variables in Vercel dashboard
-4. Done - it auto-deploys
+1. Push code to GitHub
+2. Connect to Vercel
+3. Set environment variables
+4. I'm live
 
-For step-by-step: see [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md)
+**Full instructions:** [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md) - 45 minutes total.
 
 ---
 
-## 🔐 Security & Privacy
+## 🔐 How I Keep You Safe
 
-**I'm serious about protecting your data:**
+**Your data is actually private:**
+- Your chats are only yours
+- Row Level Security means nobody can accidentally access your data
+- No data gets sold or used to train models
+- You control what I remember
 
-- Every user is isolated. Your data is only visible to you.
-- Supabase Row Level Security means I can't accidentally give someone else your data.
-- No data is sold, shared, or used to train models.
-
-**Against attacks:**
-- I block jailbreak attempts and prompt injection
+**I'm defended against attacks:**
+- Jailbreak attempts get blocked
+- Prompt injection protection
 - Input validation everywhere
-- Careful with what I trust from external sources
+- Careful what I trust from external sources
 
-**Crisis safety:**
-- This app can support and point you toward help
-- But it's **not** emergency care
-- If you're in immediate danger, call 911 or text 988 (Suicide & Crisis Lifeline)
-
----
-
-## 📚 Want to Learn More?
-
-- [AGENTIC-SYSTEM-OVERVIEW.md](./AGENTIC-SYSTEM-OVERVIEW.md) - How the AI system actually works
-- [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md) - Step-by-step to deploy
-- [API_REFERENCE.md](./API_REFERENCE.md) - The backend endpoints
-- [TESTING.md](./TESTING.md) - Test results and how to run them
+**I know my limits:**
+- I can listen and help
+- I can't be emergency care
+- If you're in danger, call 911 or text 988
+- Real help is better than me
 
 ---
 
-## A Final Note
+## 🔍 Want to Understand Me Better?
 
-**I built this with care, but it's not a replacement for real help.**
+- [How I Actually Work](./AGENTIC-SYSTEM-OVERVIEW.md) - My 6-phase system and 13 tools
+- [How to Deploy Me](./DEPLOYMENT-CHECKLIST.md) - Step-by-step
+- [My API](./API_REFERENCE.md) - The endpoints
+- [My Tests](./TESTING.md) - What actually works
 
-If you're struggling with mental health, please reach out to:
+---
+
+## A Real Talk
+
+**I'm a supportive space, but I'm not therapy.**
+
+I'm here to listen, help you untangle thoughts, notice patterns, and feel understood. That matters.
+
+But if you're struggling with mental health, **please get real help:**
 - **988** - Suicide & Crisis Lifeline (call or text)
 - **Text HELLO to 741741** - Crisis Text Line
-- A therapist, counselor, or trusted person in your life
+- A therapist, counselor, or someone you trust
 
-This app is a supportive space. Use it. But don't use it instead of getting actual help.
+Use me alongside that. Not instead of it.
+
+I'm honest about my limits because I care about you getting actual help.
 
 Take care of yourself. 🫶
